@@ -1,0 +1,38 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+/* by setting the html font size i am setting the rem size to 10px per rem */
+html {
+  // this defines what one rem nis
+  font-size: 62.5%; /*this = 16px if the user dosent change anything , allows user to zoom in on the page */
+
+  @include respond(tab-land) { // widrh < 1200
+    font-size: 56.25%; // 1 rem = 9px, 9/16 = 50%
+  }
+  
+  @include respond(tab-port) { // sidth < 900
+    font-size: 50%; // 1rem = 8px, 8/16 = 50%
+  }
+
+  @include respond(big-desktop) {
+    font-size: 75%; // 1rem = 12, 12/16 = 75%
+  }
+}
+
+body {
+  box-sizing: border-box;
+  padding: 3rem;
+
+  @include respond(tab-port) {
+    padding: 0;
+  }
+}
+
+::selection { // setting background coor of selected text (::, sudo)
+  background-color: $color-primary;
+  color: $color-white;
+}

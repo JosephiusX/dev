@@ -1,0 +1,11 @@
+13. Function Updates - default and rest operator
+    I can set the default of a peramiter by assiging a value with a =
+    the rest ... operator : puts the rest in an array. I dont know how many vars you are sending, so I'll put whatever else you sent in an array 
+    
+        eXAMPLE: https://replit.com/join/zowekneq-josephiusx
+
+14. spread Syntax        
+       https://replit.com/join/zowekneq-josephiusx
+
+15. Arrow Function
+    

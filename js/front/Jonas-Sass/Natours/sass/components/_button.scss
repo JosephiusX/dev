@@ -1,0 +1,98 @@
+.btn {
+  &,
+  &:link,
+  &:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 1.5rem 4rem;
+    display: inline-block; /* turns the button into a normal block element */
+    border-radius: 10rem;
+    transition: all 0.2s; /* all stands for all the properties */
+    position: relative;
+    font-size: $default-font-size;
+
+    // change for the <button> element
+    border: none;
+    cursor: pointer;
+
+  }
+
+  &:hover {
+    transform: translateY(-3px); /* 3 px up */
+    box-shadow: 0 1rem 2rem rgba($color-black,.2);
+
+    &::after {
+      transform: scaleX(1.4) scaleY(1.6);
+      opacity: 0;
+    }
+  }
+  
+  &:active,
+    &:focus {
+    outline: none;
+    transform: translateY(-1px);
+    box-shadow: 0 1rem 0.5rem rgba($color-black,.2); /* makes the shadow smaller when active */
+  }
+  
+  &--white {
+    background-color: $color-white;
+    color: $color-grey-dark;
+
+    &::after { // in this case the & represents &--white, the classname directly above
+      background-color: $color-white;
+    }
+  }
+  
+  &--green {
+    background-color: $color-primary;
+    color: $color-white;
+
+    &::after {
+        background-color: $color-primary;
+    }
+}
+
+  &::after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 10rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all 0.4s;
+  }
+  
+  
+  &--animated {
+    animation: moveInBottom 0.5s ease-out 0.75s;
+    animation-fill-mode: backwards;
+  }
+}
+
+.btn-text {
+  &:link,
+  &:visited{
+    font-size:1.6rem;
+    color: $color-primary;
+    display: inline-block;
+    text-decoration: none;
+    border-bottom: 1px solid $color-primary;
+    padding: 3px;
+    transition: all .2s; //  transition for transform below
+  }
+
+  &:hover{ // 
+    background-color: $color-primary;
+    color: $color-white;
+    box-shadow: 0 1rem 2rem rgba($color-black, .15);// increases shadow size when hovered
+    transform: translateY(-2px); // up by 2 px when hovered 
+  }
+
+  &:active{
+    box-shadow: 0 .5rem 1rem rgba($color-black, .15); // reduces size of box shadow when clicked
+    transform: translateY(0); // returns button to starting point when clicked
+  }
+}

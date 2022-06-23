@@ -1,0 +1,8 @@
+{
+	"typescript.format.insertSpaceAfterOpeningAndBeforeClosingJsxExpressionBraces": true,
+	"editor.wordWrap": "off",
+	"prettier.trailingComma": "all",
+	"prettier.printWidth": 120,
+	"html.format.wrapAttributes": "force-expand-multiline",
+	"diffEditor.wordWrap": "off"
+}

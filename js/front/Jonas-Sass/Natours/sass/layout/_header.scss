@@ -1,0 +1,68 @@
+.header {
+  height: 85vh;
+  background-image: linear-gradient(
+      to right bottom,
+      rgba($color-primary-light, 0.8),
+      rgba($color-primary-dark, 0.8)
+    ),
+    url(../img/hero-small.jpg); /* 2 br images. t gradient other 1 photo */
+  background-size: cover; /* trys to fit the element inside the viewport */
+  background-position: top; /* pins the top to the top in  */
+  position: relative;
+
+  // browser 
+  @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100% );
+  }
+
+
+  // targeting high resolution screen and combine multiple positions
+  @media only screen and (min-resolution: 192dpi) and (min-width: 37.5em), // this, or
+    only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em), // this, or
+    only screen and (min-width: 125em) { // this
+    background-image: linear-gradient(
+        to right bottom,
+        rgba($color-primary-light, 0.8),
+        rgba($color-primary-dark, 0.8)
+      ),
+      url(../img/hero.jpg);
+    }
+    
+    // // can be combined with block above
+    // @media (min-width: 2000px) {
+    // background-image: linear-gradient(
+    //     to right bottom,
+    //     rgba($color-secondary-light, 0.8),
+    //     rgba($color-secondary-dark, 0.8)
+    //   ),
+    //   url(../img/hero.jpg);
+    // }
+    
+
+  @include respond(phone) {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+  }
+
+  &__logo-box {
+    // in this case the & adds the calss .header to __logo-box
+    position: absolute;
+    top: 4rem;
+    left: 4rem;
+  }
+
+  &__logo {
+    height: 3.5rem;
+    margin-top: 3.5rem;
+    margin-left: 3.5rem;
+  }
+
+  &__text-box {
+    position: absolute;
+    top: 40%; /* in relationship to the top of parent element*/
+    left: 50%; /* in relationship to the left of parent element*/
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+}

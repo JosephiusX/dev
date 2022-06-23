@@ -1,0 +1,26 @@
+var _lodash = require('lodash');
+var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+var _lodashDefault = _parcelHelpers.interopDefault(_lodash);
+const state = {
+  cart: [{
+    product: 'bread',
+    quantity: 5
+  }, {
+    product: 'pizza',
+    quantity: 5
+  }],
+  user: {
+    loggedIn: true
+  }
+};
+const stateClone = Object.assign({}, state);
+// this is what lodash is for ???
+const stateDeepClone = _lodashDefault.default(state);
+// gonna have to circle back
+state.user.loggedIn = false;
+console.log(stateClone);
+console.log(stateDeepClone);
+if (module.hot) {
+  // parcel,  helps the page not dreload alot
+  module.hot.accept();
+}

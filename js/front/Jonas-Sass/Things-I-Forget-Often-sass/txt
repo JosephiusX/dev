@@ -1,0 +1,21 @@
+START AUTO COMPILER - npm run compile:sass
+should look something like this when running
+sometimes it needs me to press save on the main page to start up
+
+Rendering Complete, saving .css file...
+Wrote CSS to /mnt/c/Users/GramKracker/Desktop/1-Natours/css/style.css
+Rendering Complete, saving .css file...
+Wrote CSS to /mnt/c/Users/GramKracker/Desktop/1-Natours/css/style.css
+
+also sometimes the files dont auto save properly
+in this saving on the main document and or refreshing the page seems to do the trick
+
+
+echo "# Jonas-Sass" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin git@github.com:JosephiusX/Jonas-Sass.git
+git push -u origin main
+

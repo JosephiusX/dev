@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "react-addons-shallow-compare": "15.6.0",
+    "react-dates": "12.7"
+  }
+}

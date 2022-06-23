@@ -1,0 +1,59 @@
+/*  FLEXBOX OVERVIEW
+
+flex-direction: row | row-reverse | column | column-reverse
+
+flex-wrap: nowrap | wrap | wrap-reverse
+
+justify-content: flex-start | flex-end | center | space-between | space-around | space-evenly
+
+align-items: stretch | flex-start | flex-end | center | baseline
+
+align-content: stretch | flex-start | flex-end | center | spac-between | space-around
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  .container{
+    background-color: #ccc;
+    padding: 10px;
+    height: 1000px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    flex-wrap: wrap;/* makes new line for items that dont fit in container */
+    align-content: stretch;
+  }
+  
+  .item {
+    background-color: #f1425d;
+    padding: 30px;
+    margin: 5px;
+    color: #fff;
+    font-size: 40px;
+    
+  /*   flex-grow: 1; same as */
+    flex: 1;
+  }
+  
+  .i2{
+    height: 200px;
+    /* flex-basis: 300px;
+    flex-shrink: 0; no longer able to shrink */
+    flex: 0 0 300px;/* shorthand */
+  }
+  
+  .i3 {
+    order:1
+  }
+  
+  .i4{
+   /* align-self: stretch; */
+    order: -1;
+  }

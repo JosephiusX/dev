@@ -1,0 +1,36 @@
+L.2 Setting up the project
+    make sure node and npm are installed
+    Create new directory
+    >npx create-react-app revents --use-npm
+    > cd revents
+    > ls
+    > npm start
+
+
+sec2 L.9 React concepts
+
+sec3 L.17 Intro to Semantic UI
+    // install semantic-ui
+    npm i semantic-ui-react semantic-ui-css
+    npm i semantic-ui-react@0.88.2 : this is to match the version with the course
+
+    i seem to be having trouble with one of the auto import extensions
+
+    // SECTION 3 SUMMARY:
+    thinking in react
+    mock the app
+    Static version of the app
+    identifying the state
+    Identifying where the state should live
+    Adding inverse data flow
+
+sec4 CRUD Operations (create, read, update, delete)
+
+L.28 Createing an event
+
+    npm i cuid - simple way to give our events unique id's 
+        will use firebase for this later in the course
+
+
+sec5 L 36 Adding aditional components to route too
+    npm i react-router-dom   : version 5.2.0

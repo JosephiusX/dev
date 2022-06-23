@@ -1,0 +1,38 @@
+var _lodashEs = require('lodash-es');
+var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+var _lodashEsDefault = _parcelHelpers.interopDefault(_lodashEs);
+require('core-js/stable');
+const state = {
+  cart: [{
+    product: 'bread',
+    quantity: 5
+  }, {
+    product: 'pizza',
+    quantity: 5
+  }],
+  user: {
+    loggedIn: true
+  }
+};
+const stateClone = Object.assign({}, state);
+// this is what lodash is for ???
+const stateDeepClone = _lodashEsDefault.default(state);
+// gonna have to circle back
+state.user.loggedIn = false;
+console.log(stateClone);
+console.log(stateDeepClone);
+if (module.hot) {
+  // parcel,  helps the page not dreload alot
+  module.hot.accept();
+}
+// class Person { // this is not working. its saying i need
+// greeting = "Hey";
+// constructor(name) {
+// this.name = name;
+// console.log(`${this.greeting}, ${this.name}`);
+// }
+// }
+// const jonas = new Person('Jonas');
+console.log('Jonas' ?? null);
+// this part is working with babyle
+Promise.resolve('TEST').then(x => console.log(x));

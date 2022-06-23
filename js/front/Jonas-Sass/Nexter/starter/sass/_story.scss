@@ -1,0 +1,74 @@
+.story {
+	&__pictures {
+		background-color: $color-primary;
+		grid-column: full-start / col-end 4;
+		background-image: linear-gradient(rgba($color-primary, 0.5), rgba($color-primary, 0.5)), url(../img/back.jpg); // here we have a filter over the background image
+		background-size: cover;
+
+		display: grid; // turniing .story__pictures into a grid container
+		grid-template-rows: repeat(6, 1fr); // setting the rows to be 6 fractional units wide
+		grid-template-columns: repeat(6, 1fr); // setting columns to be 6 fractional units tall
+		align-items: center;
+
+		@media only screen and (max-width: $bp-medium) {
+			grid-column: 1 / -1;
+			padding: 3rem;
+		}
+	}
+
+	&__img--1 {
+		width: 100%;
+		grid-row: 2 / 6;
+		grid-column: 2 / 6; // normally an item would fill the whole grid area but in the case of a photo it may not due to aspect ratio
+		box-shadow: 0 2rem 5rem rgba(#000, 0.1);
+
+		@media only screen and (max-width: $bp-medium) {
+			grid-column: 1 /4;
+			grid-row: 1 / -1;
+			height: 73.7%;
+			width: 73.7;
+		}
+	}
+
+	&__img--2 {
+		width: 115%;
+		grid-row: 4 / 6;
+		grid-column: 4 / 7;
+		z-index: 20; // ensures all of the photo is on top
+		box-shadow: 0 2rem 5rem rgba(#000, 0.2);
+
+		@media only screen and (max-width: $bp-medium) {
+			grid-row: 1 / -1;
+			width: 100%;
+		}
+	}
+
+	&__content {
+		background-color: $color-grey-light-1;
+		grid-column: col-start 5 / full-end;
+
+		padding: 6rem 8vw;
+
+		// the flexbox way
+		//    display: flex; // here we are using flexbox within a grid
+		//    flex-direction: column; // changing main axis to top to bottom
+		//    justify-content: center; // centers using main axis
+		//    align-items: flex-start; // changing it from a default of stretch
+
+		// same with Grid
+		display: grid;
+		align-content: center;
+		justify-items: start;
+
+		@media only screen and (max-width: $bp-medium) {
+			grid-column: 1 / -1;
+			grid-row: 5 / 6;
+		}
+	}
+
+	&__text {
+		font-size: 1.5rem;
+		font-style: italic;
+		margin-bottom: 4rem;
+	}
+}

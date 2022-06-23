@@ -1,0 +1,6 @@
+git commit --ammend : allows me to change last most recent commit
+
+.gitignore
+1. make a .gitignore file preferably in the root directory
+2. in that file I can write files and patterns that i want git to ignore like so :
+node_modules/

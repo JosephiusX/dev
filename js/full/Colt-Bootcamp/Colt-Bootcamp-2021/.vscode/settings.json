@@ -1,0 +1,16 @@
+{
+  "workbench.colorTheme": "Monokai Pro",
+  "editor.formatOnSave": true,
+
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "files.autoSave": "onFocusChange",
+
+  "diffEditor.wordWrap": "off",
+  "editor.fontSize": 20,
+  "editor.fontWeight": null,
+  "workbench.iconTheme": "material-icon-theme",
+  "terminal.integrated.defaultProfile.windows": "Git Bash",
+  "window.zoomLevel": 0,
+  "editor.mouseWheelZoom": true,
+  "liveServer.settings.AdvanceCustomBrowserCmdLine": ""
+}

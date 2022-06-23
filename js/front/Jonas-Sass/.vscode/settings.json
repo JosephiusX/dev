@@ -1,0 +1,8 @@
+{
+	"git.ignoreLimitWarning": true,
+	"window.zoomLevel": 0,
+	"editor.fontSize": 17,
+	"editor.inlayHints.fontSize": 1,
+	"prettier.printWidth": 120,
+	"liveServer.settings.port": 5501
+}

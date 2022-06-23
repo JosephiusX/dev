@@ -1,0 +1,16 @@
+    Sass Setup 
+navigate to product folder
+initalize package.json 
+npm install node-sass --save-dev (installing node as a dev dependancy)
+create css dir and place style.css inside
+create sass dir and place main.scss inside
+
+	Setup compile
+Write in package.json "scripts" :
+"compile:sass": "node-sass sass/main.scss css/style.css -w"
+
+"compile:sass" - name we choose
+node-sass - selecting the node package
+sass/main.scss - sass Directory > main.sass file (input location) 
+css/style.css - css Directore > style.css file
+-w - watch for changes

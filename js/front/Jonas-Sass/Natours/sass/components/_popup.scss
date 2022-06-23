@@ -1,0 +1,123 @@
+.popup {
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba($color-black, 0.8);
+  z-index: 9999;
+  opacity: 0;
+  visibility: hidden; // stops cursor from reacting
+  transition: all 0.3s;
+  
+  // what we want to happen if the browser is supported
+  @supports (-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px)) {
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    background-color: rgba($color-black, .3);
+  }
+
+  &__content {
+    @include absCenter;
+
+    width: 75%;
+    background-color: $color-white;
+    box-shadow: 0 2rem 4rem rgba($color-black, 0.2);
+    border-radius: 3px;
+    display: table;
+    overflow: hidden;
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.25); // must combine
+    transition: all 0.4s 0.2s; //.2s adds delay property
+  }
+
+  &__left {
+    width: 33.333333%;
+    display: table-cell;
+
+    @include respond(tab-land) {
+      display: inline-block;
+      width: 100%;
+    }
+  }
+
+  &__right {
+    width: 66.6666667%;
+    display: table-cell;
+    vertical-align: middle;
+    padding: 3rem 5rem;
+
+    @include respond(tab-land) {
+      display: block;
+      width: 100%;
+      text-align: center;
+    }
+  }
+
+  &__img {
+    display: block;
+    width: 100%;
+
+    @include respond(tab-land) {
+        display: inline;
+        width: 48%;
+        // transform:translateY(-1rem);
+        align-self: center;
+    }
+
+  }
+
+  &__text {
+    font-size: 1.4rem;
+    margin-bottom: 4rem;
+
+    // newer feature,
+    -moz-column-count: 2; // number of cokumns
+    -moz-column-gap: 4rem; // sets the gap between
+    -moz-column-rule: 1px solid $color-grey-light-2;
+
+    column-count: 2; // number of cokumns
+    column-gap: 4rem; // sets the gap between
+    column-rule: 1px solid $color-grey-light-2;
+
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto; // automatically adds hyphens // requires document language to be set to en in the html
+  }
+
+  // open states
+  &:target {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &:target &__content {
+    // popup becomes target then we select the child .popup__content
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  &__close {
+    &:link,
+    &:visited {
+      color: $color-grey-dark;
+      position: absolute;
+      top: 2.5rem;
+      right: 2.5rem;
+      font-size: 3rem;
+      text-decoration: none;
+      display: inline-block;
+      transition: all 0.2s;
+      line-height: 1;
+    }
+
+    @include respond(tab-land) {
+        transform: translateX(2.3rem) translateY(-2.3rem);
+    }
+
+    &:hover {
+      color: $color-primary;
+    }
+  }
+}

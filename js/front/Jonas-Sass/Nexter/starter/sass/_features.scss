@@ -1,0 +1,33 @@
+.features { // this the features container
+    grid-column: center-start / center-end;
+
+    margin: 15rem 0;
+
+    display: grid; // here we are turning a grid item into a grid container as well
+    // grid-template-columns: repeat(3, 1fr); // 3 equally sized columns
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr)); // auto-fit creates as many tracks as can fit based on the width we define ,  this minmax defines it as between 15rem and 1fr
+    grid-gap: 6rem;
+    align-items: start; // the default is stretch which causes the space between header and content to differ depending on how much content. this sets them to be even
+}
+
+.feature { // this is for the individual features in the feature container
+
+    display: grid;
+    grid-template-columns: min-content 1fr; // here we can just define the columns and let the content define the rows
+    grid-row-gap: 1.5rem; // space between rows
+    grid-column-gap:2.5rem; // space between columns
+
+    &__icon { // svg image
+        fill: $color-primary;
+        width: 4.5rem;
+        height: 4.5rem;
+        // grid-row: 1 / -1; // -1 means the last of the explicit rows
+        grid-row: 1 / span 2; // to cover the width of its feature grid
+        transform: translateY(-1rem); // manually moves the icons up to align with the h1
+    }
+
+    &__text {
+        font-size: 1.7rem;
+    }
+}
+

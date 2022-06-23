@@ -1,0 +1,7 @@
+{
+    "editor.defaultFormatter": "remimarsal.prettier-now",
+    "editor.formatOnSave": true,
+    "prettier.jsxSingleQuote": true,
+    "prettier.jsxBracketSameLine": true,
+    "prettier.bracketSpacing": false
+}
