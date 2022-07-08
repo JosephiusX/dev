@@ -181,3 +181,7 @@ ITS ALIVE!!!!!  once the ipykernal is installed for jupyter support and I select
                 https://www.windowscentral.com/how-remove-onedrive-file-explorer-windows-10
                 ? seems like it only removes it from the file explorer
                 > moving on for now
+
+# trouble with keybindings: https://www.youtube.com/watch?v=Fjp2qQEGjww&ab_channel=SFDCLearn%26Share
+
+        I remapped command pallet top ctrl+1
