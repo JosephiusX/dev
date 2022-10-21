@@ -6,7 +6,7 @@ const app = express();
 
 app.use('/', (req, res, next) => {
     console.log('In the middleware!');
-    next();
+    res.send('<form></form/')
 });
 
 app.use('/addProduct', (req, res, next) => {
